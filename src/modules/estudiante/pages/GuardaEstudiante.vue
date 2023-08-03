@@ -1,5 +1,5 @@
 <template>
-  
+  <h1>Guardar Estudiante</h1>
   <DatosGuardarEstudainte/>
   
 </template>

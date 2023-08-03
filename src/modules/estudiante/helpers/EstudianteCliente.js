@@ -22,31 +22,34 @@ const eliminarEstudianteFachada = (id) => {
 
 const obtenerEstudianteAPI = async (cedula) => {
   const data = await fetch(
-    `http://localhost:8082/API/1.0/Matricula/estudiantes/${cedula}`
-  ).then((r) => r.json());
-  console.log(data);
+    `http://localhost:8080/API/1.0/Matricula/estudiantes/${cedula}`
+  ).then(r => r.json());
+   console.log(data);
+  return data
+ 
 };
 
 
-const obtenerEstudianteAPIAxios = async ()=>{
-    const data = axios.get(`http://localhost:8082/API/1.0/Matricula/estudiantes/${cedula}`
+const obtenerEstudianteAPIAxios = async (cedula)=>{
+    const data = axios.get(`http://localhost:8080/API/1.0/Matricula/estudiantes/${cedula}`
       ).then((r) => r.data);
-      console.log(data)
+      console.log(data+"asddddddddddddddddd")
+      return data;
 }
 
 const ingresarEstudiante = (bodyEstudiante)=>{
 
-    axios.post(`http://localhost:8081/API/1.0/Matricula/estudiantes/`, bodyEstudiante).then(r => r.data);
+    axios.post(`http://localhost:8080/API/1.0/Matricula/estudiantes`, bodyEstudiante).then(r => r.data);
 
 }
 
 const actualizarEstudiante = (bodyEstudiante, id)=>{
-  axios.put(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`, bodyEstudiante)
+  axios.put(`http://localhost:8080/API/1.0/Matricula/estudiantes/${id}`, bodyEstudiante)
   .then(r=>r.data);
 }
 
 const eliminarEstudiante=(id)=>{
-  axios.delete(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`).then(r=>r.data);
+  axios.delete(`http://localhost:8080/API/1.0/Matricula/estudiantes/${id}`).then(r=>r.data);
 }
 
 

@@ -1,4 +1,5 @@
 <template>
+  <h1>Eliminar Estudiante</h1>
     <DatosEliminarEstudiante/>
 </template>
 

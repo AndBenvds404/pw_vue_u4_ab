@@ -1,13 +1,11 @@
 <template>
 
-    <h1>Buscar</h1>
-  <DatosEstudiante/>
-  <h1>guardar</h1>
-  <GuardarEstudiante/>
-  <h1>Actualizar</h1>
-  <ActualizarEstudiante/>
- <h1>Eliminar</h1>
-  <EliminarEstudiante/>
+
+  <NavBar/>
+  <br>
+  <br>
+  <router-view/>
+
   
   
   
@@ -18,13 +16,12 @@ import DatosEstudiante from './modules/estudiante/pages/ConsultaEstudiante.vue'
 import GuardarEstudiante from './modules/estudiante/pages/GuardaEstudiante.vue';
 import ActualizarEstudiante from './modules/estudiante/pages/ActualizarEstudiante.vue';
 import EliminarEstudiante from './modules/estudiante/pages/EliminarEstudiante.vue';
+import NavBar from './modules/estudiante/components/NavBar.vue';
 export default {
   name: 'App',
   components: {
-    DatosEstudiante,
-    GuardarEstudiante,
-    ActualizarEstudiante,
-    EliminarEstudiante
+
+      NavBar
   }
 }
 </script>

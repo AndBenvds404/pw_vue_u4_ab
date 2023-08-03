@@ -1,4 +1,5 @@
 <template>
+  <h1>Buscar Estudiante</h1>
     <DatosEstudiante/>
 </template>
 
