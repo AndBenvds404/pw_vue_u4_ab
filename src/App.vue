@@ -1,16 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+
+    <h1>Buscar</h1>
+  <DatosEstudiante/>
+  <h1>guardar</h1>
+  <GuardarEstudiante/>
+  <h1>Actualizar</h1>
+  <ActualizarEstudiante/>
+ <h1>Eliminar</h1>
+  <EliminarEstudiante/>
   
-  <Estudiante></Estudiante>
+  
+  
 </template>
 
 <script>
-import Estudiante from './modules/estudiante/pages/Estudiante.vue'
-
+import DatosEstudiante from './modules/estudiante/pages/ConsultaEstudiante.vue'
+import GuardarEstudiante from './modules/estudiante/pages/GuardaEstudiante.vue';
+import ActualizarEstudiante from './modules/estudiante/pages/ActualizarEstudiante.vue';
+import EliminarEstudiante from './modules/estudiante/pages/EliminarEstudiante.vue';
 export default {
   name: 'App',
   components: {
-    Estudiante
+    DatosEstudiante,
+    GuardarEstudiante,
+    ActualizarEstudiante,
+    EliminarEstudiante
   }
 }
 </script>
