@@ -15,7 +15,7 @@ export default {
     },
     methods:{
         async eliminarEstudiante(){//llamamos al metodo fachda
-            await eliminarEstudianteFachada(this.id) //enviamos la propiedad reactiva
+             eliminarEstudianteFachada(this.id) //enviamos la propiedad reactiva
        
         }
 

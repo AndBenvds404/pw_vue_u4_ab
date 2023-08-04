@@ -13,7 +13,7 @@
 
 <script>
 import DatosEstudiante from './modules/estudiante/pages/ConsultaEstudiante.vue'
-import GuardarEstudiante from './modules/estudiante/pages/GuardaEstudiante.vue';
+
 import ActualizarEstudiante from './modules/estudiante/pages/ActualizarEstudiante.vue';
 import EliminarEstudiante from './modules/estudiante/pages/EliminarEstudiante.vue';
 import NavBar from './modules/estudiante/components/NavBar.vue';

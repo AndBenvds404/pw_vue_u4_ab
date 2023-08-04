@@ -7,7 +7,7 @@
     <input type="text" v-model="nombre">
 
     <label for="">Apellido</label>
-    <input type="text" v-model="Apellido">
+    <input type="text" v-model="apellido">
     
 
 </template>
@@ -19,7 +19,7 @@ import {obtenerEstudianteFachada} from "../helpers/EstudianteCliente.js";
 export default {
   data() {
     return {
-      cedula: null,
+      cedula: this.$route.params.cedula,
       nombre: null,
       apellido:null
     };
@@ -31,8 +31,29 @@ export default {
         await obtenerEstudianteFachada(this.cedula) //enviamos la propiedad reactiva
        
     }
-  }
+  },
+  mounted(){
+      const{cedula} = this.$route.params
+      console.log('cedula: '+cedula)
+      const obj =  obtenerEstudianteFachada(cedula)
 
+      this.cedula=cedula
+      const {ciudad,hoby} = this.$route.query 
+      console.log(ciudad)
+      console.log(hoby)
+
+
+      //http://localhost:8080/...../ estudiante/{cedula}
+      //http://localhost:8080/...../ estudiante/cedula/172777?ciudad=Quito
+        http://localhost:8080/...../ estudiante?provincia=pichincha&ciudad=quito
+
+      console.log(this.$route)
+    
+      
+    }
+
+
+  
 
 };
 </script>

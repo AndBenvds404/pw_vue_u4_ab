@@ -17,7 +17,7 @@ const routes = [
         component:()=> import('../pages/EliminarEstudiante.vue')
     },
     {
-        path:"/buscar",
+        path:"/buscar/:cedula",
         component: ()=> import('../pages/ConsultaEstudiante.vue')
     },
     {

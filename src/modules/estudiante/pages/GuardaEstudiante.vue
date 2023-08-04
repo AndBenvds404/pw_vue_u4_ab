@@ -11,7 +11,12 @@ export default {
 
     components:{
         DatosGuardarEstudainte
+    },
+    mounted(){
+      const{cedula} = this.$route.params
+      console.log('cedula: '+cedula)
     }
+
 }
 </script>
 
