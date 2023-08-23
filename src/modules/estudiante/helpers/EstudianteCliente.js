@@ -21,9 +21,8 @@ const eliminarEstudianteFachada = (id) => {
 /* Lambdas */
 
 const obtenerEstudianteAPI = async (cedula) => {
-  const data = await fetch(
-    `http://localhost:8080/API/1.0/Matricula/estudiantes/${cedula}`
-  ).then(r => r.json());
+  
+  const data = await fetch(`http://localhost:8081/API/1.0/Matricula/estudiantes/${cedula}`).then(r => r.json());
    console.log(data);
   return data
  
@@ -31,25 +30,41 @@ const obtenerEstudianteAPI = async (cedula) => {
 
 
 const obtenerEstudianteAPIAxios = async (cedula)=>{
-    const data = axios.get(`http://localhost:8080/API/1.0/Matricula/estudiantes/${cedula}`
-      ).then((r) => r.data);
+    //En el config vamos a enviar todos los datos de cabecera dentro de un cliente JS
+    const headers={ //objeto JSON
+      "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+      "mensaje": "valor1"
+    }
+
+    const data = axios.get(`http://localhost:8081/API/1.0/Matricula/estudiantes/${cedula}`,{headers:headers}).then((r) => r.data);
       console.log(data+"asddddddddddddddddd")
       return data;
 }
 
 const ingresarEstudiante = (bodyEstudiante)=>{
-
-    axios.post(`http://localhost:8080/API/1.0/Matricula/estudiantes`, bodyEstudiante).then(r => r.data);
+  const headers={ //objeto JSON
+    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "mensaje": "valor1"
+  }
+    axios.post(`http://localhost:8081/API/1.0/Matricula/estudiantes`, bodyEstudiante,{headers:headers}).then(r => r.data);
 
 }
 
 const actualizarEstudiante = (bodyEstudiante, id)=>{
-  axios.put(`http://localhost:8080/API/1.0/Matricula/estudiantes/${id}`, bodyEstudiante)
+  const headers={ //objeto JSON
+    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "mensaje": "valor1"
+  }
+  axios.put(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`, bodyEstudiante,{headers:headers})
   .then(r=>r.data);
 }
 
 const eliminarEstudiante=(id)=>{
-  axios.delete(`http://localhost:8080/API/1.0/Matricula/estudiantes/${id}`).then(r=>r.data);
+  const headers={ //objeto JSON
+    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "mensaje": "valor1"
+  }
+  axios.delete(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`,{headers:headers}).then(r=>r.data);
 }
 
 
