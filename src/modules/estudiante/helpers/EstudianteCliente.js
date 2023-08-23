@@ -32,7 +32,7 @@ const obtenerEstudianteAPI = async (cedula) => {
 const obtenerEstudianteAPIAxios = async (cedula)=>{
     //En el config vamos a enviar todos los datos de cabecera dentro de un cliente JS
     const headers={ //objeto JSON
-      "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+      "Authorization":"Bearer eeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MTcwOSwiZXhwIjoxNjkyNzUyMzA5fQ.mVjpbrkPk3rNlQnpsJs3Td91eAQS73E3khiG5yUcN9QpCJ_-sKJBlOYtw6ANGI2-TACrYIW1AvcXeVUhxCBpnA",
       "mensaje": "valor1"
     }
 
@@ -41,9 +41,9 @@ const obtenerEstudianteAPIAxios = async (cedula)=>{
       return data;
 }
 
-const ingresarEstudiante = (bodyEstudiante)=>{
+const ingresarEstudiante = (bodyEstudiante, token)=>{ //debe ser enviado desde un token padre
   const headers={ //objeto JSON
-    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "Authorization":"Bearer ",
     "mensaje": "valor1"
   }
     axios.post(`http://localhost:8081/API/1.0/Matricula/estudiantes`, bodyEstudiante,{headers:headers}).then(r => r.data);
@@ -52,7 +52,7 @@ const ingresarEstudiante = (bodyEstudiante)=>{
 
 const actualizarEstudiante = (bodyEstudiante, id)=>{
   const headers={ //objeto JSON
-    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MTcwOSwiZXhwIjoxNjkyNzUyMzA5fQ.mVjpbrkPk3rNlQnpsJs3Td91eAQS73E3khiG5yUcN9QpCJ_-sKJBlOYtw6ANGI2-TACrYIW1AvcXeVUhxCBpnA",
     "mensaje": "valor1"
   }
   axios.put(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`, bodyEstudiante,{headers:headers})
@@ -61,7 +61,7 @@ const actualizarEstudiante = (bodyEstudiante, id)=>{
 
 const eliminarEstudiante=(id)=>{
   const headers={ //objeto JSON
-    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MDE5NywiZXhwIjoxNjkyNzUwNzk3fQ.SWekwbL-Qs0ApReQiek7jvc5_nzt9BSeZ1QPYkiQ5jR3JcXMFt6n4VLyMzhlHmKi4WBz3u75UxzfzwalCD4fag",
+    "Authorization":"Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTY5Mjc1MTcwOSwiZXhwIjoxNjkyNzUyMzA5fQ.mVjpbrkPk3rNlQnpsJs3Td91eAQS73E3khiG5yUcN9QpCJ_-sKJBlOYtw6ANGI2-TACrYIW1AvcXeVUhxCBpnA",
     "mensaje": "valor1"
   }
   axios.delete(`http://localhost:8081/API/1.0/Matricula/estudiantes/${id}`,{headers:headers}).then(r=>r.data);

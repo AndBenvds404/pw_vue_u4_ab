@@ -1,15 +1,36 @@
 <template>
+
+  <div class="contain">
+
+    <div class="caja-datos">
+            <div  class="shadow-lg p-3 mb-5 bg-body rounded">
+
+            
+              <div class="form-floating mb-3">
+                <input v-model="cedula" type="ext" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">cedula</label>
+              </div>
+
+          
+              <div class="form-floating mb-3">
+                <input v-model="nombre" type="ext" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">nombre</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input v-model="apellido" type="ext" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">apellido</label>
+              </div>
+
+              <button class="btn btn-primary" @click="guardarEstudiante">Guardar</button>
+        
+          </div>
+    </div>
+    
+
+    
+  </div>
   
-    <label for="">Cedula</label>
-      <input type="text" v-model="cedula">
-  
-      <label for="">Nombre</label>
-      <input type="text" v-model="nombre">
-  
-      <label for="">Apellido</label>
-      <input type="text" v-model="Apellido">
-  
-      <button @click="guardarEstudiante">Guardar</button>
   </template>
   
   <script>
@@ -43,6 +64,20 @@
   
   </script>
   
-  <style>
+  <style scoped> 
+
+  
+  .caja-datos{
+
+    align-items: center;
+  }
+
+  .shadow-lg{
+    margin-top: 100px;
+    display: inline-block;
+    width: 500px;
+
+    
+  }
   
   </style>

@@ -1,5 +1,5 @@
 <template>
-  <h1>Guardar Estudiante</h1>
+  <h1 class="font-monospace"> Guardar Estudiante</h1>
   <DatosGuardarEstudainte/>
   
 </template>
@@ -16,5 +16,6 @@ export default {
 </script>
 
 <style>
+
 
 </style>

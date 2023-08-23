@@ -1,6 +1,6 @@
 <template>
 
-    <input v-model="cedula" type="text">
+    <input v-model="cedula" type="text" class="form-floating mb-3">
     <button @click="consultarEstudiante"> Consultar </button>
 
     <label for="">Nombre</label>
@@ -38,4 +38,9 @@ export default {
 </script>
 
 <style>
+
+.form-floating{
+
+}
+
 </style>
